@@ -27,6 +27,7 @@ library
   exposed-modules:
       Kmeans
       Lib
+      Vector
   other-modules:
       Paths_kmeans_haskell
   hs-source-dirs:

@@ -57,8 +57,8 @@ oneRandom k = uniformR (0, k - 1)
 infRandoms :: (RandomGen b, UniformRange a, Num a) => a -> b -> [a]
 infRandoms k = unfoldr (Just . oneRandom k)
 
-kRandomUniqIndices :: Int -> [Int]
-kRandomUniqIndices k = take k (nub (infRandoms k pureGen))
+kRandomUniqIndices :: Int -> Int -> [Int]
+kRandomUniqIndices n k = take k (nub ((infRandoms n) pureGen))
 
 -- Pick values from points whose index is in positions
 pickPoints :: [a] -> [Int] -> [a]
